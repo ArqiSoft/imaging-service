@@ -1,4 +1,4 @@
-FROM maven:3.5.4-jdk-10-slim AS builder
+FROM FROM maven:3.6-jdk-10-slim AS builder
 ARG BUILD_NUMBER=undefined
 ARG BUILD_TIMESTAMP=undefined
 ARG GIT_COMMIT_SHORT=undefined
