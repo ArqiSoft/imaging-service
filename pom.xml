@@ -160,7 +160,7 @@
 			<version>2.3.0</version>
 		</dependency>
 		<dependency>
-			<groupId>sds</groupId>
+			<groupId>com.github.arqisoft</groupId>
 			<artifactId>messaging</artifactId>
 			<version>1.1</version>
 		</dependency>
