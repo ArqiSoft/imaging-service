@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.arqisoft</groupId>
@@ -23,7 +23,7 @@
 		<pdfbox.version>1.8.15</pdfbox.version>
 		<twelvemonkeys.version>3.3.2</twelvemonkeys.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<nexus.release.url>http://nexus.your-company.com/repository/maven-releases</nexus.release.url>
+		<nexus.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</nexus.release.url>
 	</properties>
 
 	<parent>
@@ -32,7 +32,6 @@
 		<version>2.0.3.RELEASE</version>
 		<relativePath />
 	</parent>
-
 
 	<dependencies>
 		<dependency>
@@ -55,7 +54,7 @@
 			<version>${jmol.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.npspot</groupId>
+			<groupId>com.github.arqisoft</groupId>
 			<artifactId>jtransit-light</artifactId>
 			<version>1.10.35</version>
 		</dependency>
@@ -172,7 +171,6 @@
 		</dependency>
 	</dependencies>
 
-
 	<build>
 		<resources>
 			<resource>
@@ -212,6 +210,10 @@
 		<repository>
 			<id>nexus</id>
 			<url>${nexus.release.url}</url>
+		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
 
