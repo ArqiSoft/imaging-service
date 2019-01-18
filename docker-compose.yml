@@ -4,7 +4,7 @@ services:
     osdr-jmol-imaging-service:
         restart: always
         container_name: osdr-jmol-imaging-service
-        image: docker.your-company.com/sds/osdr-jmol-imaging-service:latest
+        image: leanda/imaging-service:latest
         environment:
         - TZ=EST
         - OSDR_LOG_FOLDER=/logs
