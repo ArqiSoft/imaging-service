@@ -1,4 +1,5 @@
 # Imaging service
+
 Service generates thumbnails for various file formats:
 
 Supported formats:
@@ -10,7 +11,6 @@ Supported formats:
 * rxn, mol - utput formats: png, svg
 
 * cif - output format: png
-
 
 ## System Requirements
 
@@ -29,6 +29,5 @@ mvn spring-boot:run
 
 ## Create and start docker image
 
-1. Use *docker-compose build* command to build the docker image.
-2. Use *docker-compose up -d* command to launch the docker image.
-
+1. Use `docker-compose build` command to build the docker image.
+2. Use `docker-compose up -d` command to launch the docker image.
