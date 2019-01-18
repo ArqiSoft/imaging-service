@@ -18,7 +18,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
-    <PackageReference Include="Sds.CqrsLite" Version="2.0.0" />
+    <PackageReference Include="Sds.CqrsLite" Version="2.0.2" />
     <PackageReference Include="Sds.CqrsLite.MassTransit" Version="3.0.1" />
     <PackageReference Include="Sds.MassTransit.RabbitMq" Version="3.0.4" />
     <PackageReference Include="Sds.Serilog" Version="2.0.1" />

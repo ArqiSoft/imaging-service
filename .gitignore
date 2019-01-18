@@ -14,3 +14,11 @@ x64/
 [Xx]unit-results.xml
 
 /target/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+*.vs/
+*.vscode/
+*project.lock.json
