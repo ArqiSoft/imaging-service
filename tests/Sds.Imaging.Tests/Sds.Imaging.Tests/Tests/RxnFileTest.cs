@@ -23,7 +23,7 @@ namespace Sds.Imaging.Tests
         public RxnFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "10001.rxn").Result;
+            BlobId = harness.UploadResource(Bucket, "10001.rxn").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200, "SVG", "image/svg+xml").Wait();
         }
     }
@@ -54,7 +54,7 @@ namespace Sds.Imaging.Tests
         }
 
         [Fact]
-        public async Task MoleculeImageGenetating_ValidMolFile_ReceivedEventShouldContainValidData()
+        public void MoleculeImageGenetating_ValidMolFile_ReceivedEventShouldContainValidData()
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             evn.Should().NotBeNull();

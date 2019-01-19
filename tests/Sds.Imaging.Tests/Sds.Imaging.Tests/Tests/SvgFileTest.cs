@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public SvgFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "Aspirin.mol.svg").Result;
+            BlobId = harness.UploadResource(Bucket, "Aspirin.mol.svg").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }

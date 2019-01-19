@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Sds.Imaging.Tests
+namespace Sds.Imaging.LoadTests
 {
     public class ImagingTestHarness : IDisposable
     {

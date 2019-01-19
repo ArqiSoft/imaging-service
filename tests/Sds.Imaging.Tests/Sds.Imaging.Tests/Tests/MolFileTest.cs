@@ -1,11 +1,5 @@
 using FluentAssertions;
-using MassTransit;
-using MassTransit.Testing;
-using MassTransit.Testing.MessageObservers;
-using Sds.Imaging.Domain.Events;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -23,7 +17,7 @@ namespace Sds.Imaging.Tests
         public MolFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "chemspider.mol").Result;
+            BlobId = harness.UploadResource(Bucket, "chemspider.mol").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200, "SVG", "image/svg+xml").Wait();
         }
     }

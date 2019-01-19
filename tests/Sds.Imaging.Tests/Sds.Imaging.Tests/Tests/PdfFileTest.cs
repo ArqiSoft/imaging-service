@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public PdfFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "Abdelaziz A Full_manuscript.pdf").Result;
+            BlobId = harness.UploadResource(Bucket, "Abdelaziz A Full_manuscript.pdf").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }

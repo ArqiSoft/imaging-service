@@ -1,6 +1,5 @@
 using FluentAssertions;
 using System;
-using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -17,7 +16,7 @@ namespace Sds.Imaging.Tests
         public CsvFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "PropertiesPrediction.csv").Result;
+            BlobId = harness.UploadResource(Bucket, "PropertiesPrediction.csv").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }

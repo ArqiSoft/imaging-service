@@ -1,5 +1,4 @@
 using FluentAssertions;
-using Sds.Imaging.Domain.Events;
 using System;
 using System.Threading.Tasks;
 using Xunit;
@@ -18,7 +17,7 @@ namespace Sds.Imaging.Tests
         public MsExcelXlsFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "key journal set xls.xls").Result;
+            BlobId = harness.UploadResource(Bucket, "key journal set xls.xls").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }

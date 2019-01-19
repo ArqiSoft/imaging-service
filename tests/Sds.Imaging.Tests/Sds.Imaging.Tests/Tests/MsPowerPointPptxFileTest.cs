@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public MsPowerPointPptxFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "Soton-April-2013pptx.pptx").Result;
+            BlobId = harness.UploadResource(Bucket, "Soton-April-2013pptx.pptx").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }
@@ -49,7 +49,7 @@ namespace Sds.Imaging.Tests
         }
 
         [Fact]
-        public async Task MsPowerPointPptxImageGenetating_ValidMolFile_ReceivedEventShouldContainValidData()
+        public void MsPowerPointPptxImageGenetating_ValidMolFile_ReceivedEventShouldContainValidData()
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             evn.Should().NotBeNull();

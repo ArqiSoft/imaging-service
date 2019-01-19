@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public PngFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "ml-training-image.png").Result;
+            BlobId = harness.UploadResource(Bucket, "ml-training-image.png").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }

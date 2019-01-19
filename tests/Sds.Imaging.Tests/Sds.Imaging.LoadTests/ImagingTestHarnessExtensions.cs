@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Sds.Imaging.Tests
+namespace Sds.Imaging.LoadTests
 {
     public static class ImagingTestHarnessExtensions
     {

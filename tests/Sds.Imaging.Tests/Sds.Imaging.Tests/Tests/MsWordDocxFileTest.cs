@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public MsWordDocxFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "Hexahedron_kk_kc_kk_rm2_kk docx.docx").Result;
+            BlobId = harness.UploadResource(Bucket, "Hexahedron_kk_kc_kk_rm2_kk docx.docx").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }

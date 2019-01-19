@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public MsExcelXlsxFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "key journal set xlsx.xlsx").Result;
+            BlobId = harness.UploadResource(Bucket, "key journal set xlsx.xlsx").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }

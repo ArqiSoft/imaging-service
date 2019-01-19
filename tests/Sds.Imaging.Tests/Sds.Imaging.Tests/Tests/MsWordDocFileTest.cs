@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public MsWordDocFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "Developing Standard Approaches for Curating Small Molecule Pharmaceuticals_Jan18_2013.doc").Result;
+            BlobId = harness.UploadResource(Bucket, "Developing Standard Approaches for Curating Small Molecule Pharmaceuticals_Jan18_2013.doc").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }
@@ -48,7 +48,7 @@ namespace Sds.Imaging.Tests
         }
 
         [Fact]
-        public async Task MsWordDocImageGenetating_ValidFile_ReceivedEventShouldContainValidData()
+        public void MsWordDocImageGenetating_ValidFile_ReceivedEventShouldContainValidData()
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             evn.Should().NotBeNull();

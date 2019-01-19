@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public GifFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "2018-02-14.gif").Result;
+            BlobId = harness.UploadResource(Bucket, "2018-02-14.gif").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }

@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public MsPowerPointPptFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "Soton-April-2013ppt.ppt").Result;
+            BlobId = harness.UploadResource(Bucket, "Soton-April-2013ppt.ppt").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
         }
     }

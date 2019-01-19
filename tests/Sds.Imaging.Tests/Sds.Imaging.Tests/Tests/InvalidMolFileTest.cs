@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public InvalidMolFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadBlob(Bucket, "empty.rxn").Result;
+            BlobId = harness.UploadResource(Bucket, "empty.rxn").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200, "SVG", "image/svg+xml").Wait();
         }
     }
