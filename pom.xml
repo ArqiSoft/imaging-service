@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.arqisoft</groupId>
-	<artifactId>leanda-imaging-service</artifactId>
-	<name>Leanda.Imaging.Service</name>
+	<artifactId>sds-imaging-service</artifactId>
+	<name>Sds.Imaging.Service</name>
 	<version>0.14</version>
 
 	<properties>
