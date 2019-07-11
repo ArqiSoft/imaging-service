@@ -11,7 +11,7 @@ ENV GIT_AUTHOR_NAME ${GIT_AUTHOR_NAME}
 
 COPY . /usr/src/imaging-service
 WORKDIR /usr/src/imaging-service
-RUN mvn -B -Pdocker clean package -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+RUN mvn -B -Pdocker clean package
 
 FROM openjdk:8-jre
 

@@ -78,6 +78,9 @@
     <None Update="Resources\Soton-April-2013pptx.pptx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Zeiss_Test1-zs.czi">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

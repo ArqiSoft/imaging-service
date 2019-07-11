@@ -41,7 +41,8 @@ public class RasterizationFactory {
             case "ods":
             case "odt":
                 return new OfficeRasterizer(OfficeConverterFactory.getInstance(extension));
-
+            case "czi":
+                return new ZeissBioformatRasterizer();
             default:
                 throw new AssertionError(String.format("Unsupported file format: %s", extension));
             }
