@@ -18,7 +18,7 @@ namespace Sds.Imaging.Tests
         {
             Bucket = UserId.ToString();
             BlobId = harness.UploadResource(Bucket, "Zeiss_Test1-zs.czi").Result;
-            harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200).Wait();
+            harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200, "jpeg", "image/jpeg").Wait();
         }
     }
 
@@ -43,7 +43,7 @@ namespace Sds.Imaging.Tests
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             var blobInfo = await Harness.BlobStorage.GetFileInfo(evn.BlobId, Bucket);
-            blobInfo.ContentType.Should().BeEquivalentTo("image/png");
+            blobInfo.ContentType.Should().BeEquivalentTo("image/jpeg");
             blobInfo.Length.Should().BeGreaterThan(0);
         }
 
@@ -57,8 +57,8 @@ namespace Sds.Imaging.Tests
             evn.UserId.Should().Be(UserId);
             evn.Image.Width.Should().Equals(200);
             evn.Image.Height.Should().Equals(200);
-            evn.Image.Format.ToLower().Should().BeEquivalentTo("png");
-            evn.Image.MimeType.ToLower().Should().BeEquivalentTo("image/png");
+            evn.Image.Format.ToLower().Should().BeEquivalentTo("jpeg");
+            evn.Image.MimeType.ToLower().Should().BeEquivalentTo("image/jpeg");
         }
     }
 }

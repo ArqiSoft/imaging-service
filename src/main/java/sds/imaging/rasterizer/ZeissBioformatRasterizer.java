@@ -44,8 +44,7 @@ public class ZeissBioformatRasterizer implements Rasterizer {
 
             File directory = new File(System.getenv("OSDR_TEMP_FILES_FOLDER"));
             File inputTempFile = File.createTempFile("temp", ".czi", directory);
-            File outputTempFile = File.createTempFile("temp", ".jpeg", directory);
-            File outputPngFile = File.createTempFile("temp", ".png", directory);
+            File outputTempFile = File.createTempFile("temp", "." + image.getFormat(), directory);
             try (FileOutputStream out = new FileOutputStream(inputTempFile)) {
                 IOUtils.copy(new ByteArrayInputStream(data), out);
             }
@@ -54,14 +53,9 @@ public class ZeissBioformatRasterizer implements Rasterizer {
             outputFile = outputTempFile.getCanonicalPath();
 
             convert();
-            File file = new File(outputFile);
-            BufferedImage bi = ImageIO.read(file);
-
-            ImageIO.write(bi, "png", outputPngFile);
-            resultImageBytes = Files.readAllBytes(outputPngFile.toPath());
+            resultImageBytes = Files.readAllBytes(outputTempFile.toPath());
             inputTempFile.delete();
             outputTempFile.delete();
-            outputPngFile.delete();
         } catch (IOException ex) {
             Logger.getLogger(ZeissBioformatRasterizer.class.getName()).log(Level.SEVERE, null, ex);
         }
