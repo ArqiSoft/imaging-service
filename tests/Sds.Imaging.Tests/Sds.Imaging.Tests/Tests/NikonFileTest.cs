@@ -6,7 +6,7 @@ using Xunit.Abstractions;
 
 namespace Sds.Imaging.Tests
 {
-    public class NikonFileTestFixture
+    public class CziFileTestFixture
     {
         public Guid UserId { get; } = Guid.NewGuid();
         public Guid BlobId { get; }
@@ -14,23 +14,23 @@ namespace Sds.Imaging.Tests
         public Guid Id { get; } = Guid.NewGuid();
         public Guid CorrelationId { get; } = Guid.NewGuid();
 
-        public NikonFileTestFixture(ImagingTestHarness harness)
+        public CziFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadResource(Bucket, "Nikon_BF007.nd2").Result;
-            harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200, "png", "image/png").Wait();
+            BlobId = harness.UploadResource(Bucket, "Zeiss_Test1-zs.czi").Result;
+            harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200, "jpeg", "image/jpeg").Wait();
         }
     }
 
     [Collection("Imaging Test Harness")]
-    public class NikonFileTest : ImagingTest, IClassFixture<NikonFileTestFixture>
+    public class CziFileTest : ImagingTest, IClassFixture<CziFileTestFixture>
     {
         private Guid CorrelationId;
         private string Bucket;
         private Guid UserId;
         private Guid Id;
 
-        public NikonFileTest(ImagingTestHarness harness, ITestOutputHelper output, NikonFileTestFixture initFixture) : base(harness, output)
+        public CziFileTest(ImagingTestHarness harness, ITestOutputHelper output, CziFileTestFixture initFixture) : base(harness, output)
         {
             Id = initFixture.Id;
             CorrelationId = initFixture.CorrelationId;
@@ -39,16 +39,16 @@ namespace Sds.Imaging.Tests
         }
 
         [Fact]
-        public async Task NikonImageGenetating_ValidNikonFile_ShouldGenerateOneImage()
+        public async Task CziImageGenetating_ValidPdfFile_ShouldGenerateOneImage()
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             var blobInfo = await Harness.BlobStorage.GetFileInfo(evn.BlobId, Bucket);
-            blobInfo.ContentType.Should().BeEquivalentTo("image/png");
+            blobInfo.ContentType.Should().BeEquivalentTo("image/jpeg");
             blobInfo.Length.Should().BeGreaterThan(0);
         }
 
         [Fact]
-        public void NikonImageGenetating_ValidNikonFile_ReceivedEventShouldContainValidData()
+        public void CziImageGenetating_ValidMolFile_ReceivedEventShouldContainValidData()
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             evn.Should().NotBeNull();
@@ -57,8 +57,8 @@ namespace Sds.Imaging.Tests
             evn.UserId.Should().Be(UserId);
             evn.Image.Width.Should().Equals(200);
             evn.Image.Height.Should().Equals(200);
-            evn.Image.Format.ToLower().Should().BeEquivalentTo("png");
-            evn.Image.MimeType.ToLower().Should().BeEquivalentTo("image/png");
+            evn.Image.Format.ToLower().Should().BeEquivalentTo("jpeg");
+            evn.Image.MimeType.ToLower().Should().BeEquivalentTo("image/jpeg");
         }
     }
 }

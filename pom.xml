@@ -234,11 +234,11 @@
             <name>OpenMicroscopy Repository</name>
             <url>http://artifacts.openmicroscopy.org/artifactory/ome.releases/</url>
         </repository>
-                <repository>
+<!--                <repository>
             <id>ome</id>
             <name>OME Artifactory</name>
             <url>https://artifacts.openmicroscopy.org/artifactory/maven/</url>
-        </repository>
+        </repository>-->
     </repositories>
 
     <pluginRepositories>

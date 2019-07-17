@@ -43,6 +43,8 @@ public class RasterizationFactory {
                 return new OfficeRasterizer(OfficeConverterFactory.getInstance(extension));
             case "czi":
                 return new ZeissBioformatRasterizer();
+            case "nd2":
+                return new NikonRasterizer();
             default:
                 throw new AssertionError(String.format("Unsupported file format: %s", extension));
             }
