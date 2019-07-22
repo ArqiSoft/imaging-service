@@ -23,11 +23,11 @@ public class OfficeRasterizer implements Rasterizer {
     }
 
     @Override
-    public byte[] rasterize(Image image, byte[] data) {
+    public byte[] rasterize(Image image, byte[] data, String fileExtension) {
         byte[] result = null;
         try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
                 InputStream pdf = converter.Convert(byteArrayInputStream)) {
-            result = rasterizer.rasterize(image, IOUtils.toByteArray(pdf));
+            result = rasterizer.rasterize(image, IOUtils.toByteArray(pdf), "pdf");
         } catch (NullPointerException | IOException e) {
             LOGGER.error("Error converting document to image: {}", e);
             throw new RasterizationException(e);

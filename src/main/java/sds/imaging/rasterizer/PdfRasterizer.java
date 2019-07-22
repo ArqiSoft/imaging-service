@@ -33,7 +33,7 @@ public class PdfRasterizer implements Rasterizer {
     }
 
     @Override
-    public byte[] rasterize(Image image, byte[] data) {
+    public byte[] rasterize(Image image, byte[] data, String fileExtension) {
         String destFormat = image.getFormat().toLowerCase(Locale.getDefault());
         if (!SUPPORTED_FORMATS.contains(destFormat)) {
             throw new RasterizationException(

@@ -61,12 +61,12 @@ public class NikonRasterizer implements Rasterizer {
     private int tileSizeY;
 
     @Override
-    public byte[] rasterize(Image image, byte[] data) {
+    public byte[] rasterize(Image image, byte[] data, String fileExtension) {
         
         byte[] resultImageBytes = null;
         try {
             File directory = new File(System.getenv("OSDR_TEMP_FILES_FOLDER"));
-            File inputTempFile = File.createTempFile("temp", ".nd2", directory);
+            File inputTempFile = File.createTempFile("temp", "." + fileExtension, directory);
             File outputTempFile = File.createTempFile("temp", "." + image.getFormat(), directory);
             try (FileOutputStream out = new FileOutputStream(inputTempFile)) {
                 IOUtils.copy(new ByteArrayInputStream(data), out);

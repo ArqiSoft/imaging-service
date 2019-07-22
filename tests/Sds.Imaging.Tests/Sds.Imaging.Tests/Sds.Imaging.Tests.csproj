@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Tests\LsmFileTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Tests\LsmFileTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.4.2" />
     <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="5.1.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
@@ -48,6 +56,9 @@
     <None Update="Resources\Aspirin.mol.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\basal_8glut4_cell11_50min_37c_tracks11.ims">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\chemspider.mol">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -60,10 +71,19 @@
     <None Update="Resources\Hexahedron_kk_kc_kk_rm2_kk docx.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\HFT7_day0_field02_Z.lsm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\HFT9_day0_100x_f3_Z.lsm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\key journal set xls.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\key journal set xlsx.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Leica_150519_FRAP_test_ROIs_chromagreen.lif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\ml-training-image.png">

@@ -21,7 +21,7 @@ public class ImageRasterizer implements Rasterizer {
     private static final Logger LOGGER = LoggerFactory.getLogger(ImageRasterizer.class);
 
     @Override
-    public byte[] rasterize(Image image, byte[] data) {
+    public byte[] rasterize(Image image, byte[] data, String fileExtension) {
         byte[] result = null;
 
         try (InputStream in = new ByteArrayInputStream(data);

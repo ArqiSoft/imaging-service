@@ -17,7 +17,7 @@ public class CifRasterizer implements Rasterizer {
     private static Object lock = new Object();
 
     @Override
-    public byte[] rasterize(Image image, byte[] data) {
+    public byte[] rasterize(Image image, byte[] data, String fileExtension) {
         Map<String, Object> params = new HashMap<String, Object>();
         Viewer vwr = new Viewer(params);
         int width = image.getWidth();

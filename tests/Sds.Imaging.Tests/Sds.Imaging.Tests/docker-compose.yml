@@ -22,7 +22,7 @@ services:
   imaging:
     restart: always
     container_name: imaging-service
-    image: leanda/imaging:${TAG_VERSION-latest}
+    image: leanda/imaging:latest
     entrypoint: /bin/bash
     environment:
       - OSDR_LOG_FOLDER=/logs
@@ -31,7 +31,7 @@ services:
       - OSDR_MONGO_DB=mongodb://mongo:27017/osdr_dev
       - QUEUE_PREFETCH_SIZE=9
       - EXECUTOR_THREAD_COUNT=3
-    command: ./wait-for-it.sh rabbitmq:5672 -t 30 -- java -Djava.awt.headless=true -Xmx256m -XX:NativeMemoryTracking=summary -jar sds-imaging-service.jar
+    command: ./wait-for-it.sh rabbitmq:5672 -t 30 -- java -Djava.awt.headless=true -Xmx1024m -XX:NativeMemoryTracking=summary -jar sds-imaging-service.jar
     volumes:
       - ${OSDR_LOG_FOLDER}:/logs
       - ${OSDR_TEMP_FILES_FOLDER}:/temp

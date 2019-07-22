@@ -52,7 +52,7 @@ public class ThumbnailGeneratorJmol extends AbstractMessageProcessor<GenerateIma
             
             byte[] thumbnail = RasterizationFactory
                     .getInstance(fileNameParts[fileNameParts.length - 1])
-                    .rasterize(message.getImage(), data);;
+                    .rasterize(message.getImage(), data, fileNameParts[fileNameParts.length - 1]);;
 
                     Image img = message.getImage();
                     Map<String, Object> metadata = new HashMap<>();
