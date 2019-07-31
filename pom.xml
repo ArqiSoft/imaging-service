@@ -176,8 +176,17 @@
             <artifactId>formats-gpl</artifactId>
             <version>6.1.1</version>
         </dependency>
-        
-        
+        <dependency>
+            <groupId>net.imagej</groupId>
+            <artifactId>ij</artifactId>
+            <version>1.52o</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>sc.fiji</groupId>
+            <artifactId>LSM_Reader</artifactId>
+            <version>4.1.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -208,7 +217,7 @@
     </build>
 
     <repositories>
-                <repository>
+        <repository>
             <id>central</id>
             <name>Central Repository</name>
             <url>https://repo.maven.apache.org/maven2</url>
@@ -229,16 +238,16 @@
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
-                <repository>
+        <repository>
             <id>ome-releases</id>
             <name>OpenMicroscopy Repository</name>
             <url>http://artifacts.openmicroscopy.org/artifactory/ome.releases/</url>
         </repository>
-<!--                <repository>
-            <id>ome</id>
-            <name>OME Artifactory</name>
-            <url>https://artifacts.openmicroscopy.org/artifactory/maven/</url>
-        </repository>-->
+        <repository>
+            <id>imagej.public</id>
+            <name>ImageJ Maven repositrory</name>
+            <url>https://maven.imagej.net/content/groups/public</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>

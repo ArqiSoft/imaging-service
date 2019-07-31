@@ -17,7 +17,7 @@ namespace Sds.Imaging.Tests
         public LsmFileTestFixture(ImagingTestHarness harness)
         {
             Bucket = UserId.ToString();
-            BlobId = harness.UploadResource(Bucket, "HFT7_day0_field02_Z.lsm").Result;
+            BlobId = harness.UploadResource(Bucket, "HFT9_day0_100x_f1.lsm").Result;
             harness.GenerateImage(Id, BlobId, Bucket, UserId, CorrelationId, 200, 200, "png", "image/png").Wait();
         }
     }
@@ -39,7 +39,7 @@ namespace Sds.Imaging.Tests
         }
 
         [Fact]
-        public async Task NikonImageGenetating_ValidNikonFile_ShouldGenerateOneImage()
+        public async Task LsmImageGenetating_ValidNikonFile_ShouldGenerateOneImage()
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             var blobInfo = await Harness.BlobStorage.GetFileInfo(evn.BlobId, Bucket);
@@ -48,7 +48,7 @@ namespace Sds.Imaging.Tests
         }
 
         [Fact]
-        public void NikonImageGenetating_ValidNikonFile_ReceivedEventShouldContainValidData()
+        public void LsmImageGenetating_ValidNikonFile_ReceivedEventShouldContainValidData()
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             evn.Should().NotBeNull();
@@ -57,8 +57,8 @@ namespace Sds.Imaging.Tests
             evn.UserId.Should().Be(UserId);
             evn.Image.Width.Should().Equals(200);
             evn.Image.Height.Should().Equals(200);
-            evn.Image.Format.ToLower().Should().BeEquivalentTo("jpeg");
-            evn.Image.MimeType.ToLower().Should().BeEquivalentTo("image/jpeg");
+            evn.Image.Format.ToLower().Should().BeEquivalentTo("png");
+            evn.Image.MimeType.ToLower().Should().BeEquivalentTo("image/png");
         }
     }
 }

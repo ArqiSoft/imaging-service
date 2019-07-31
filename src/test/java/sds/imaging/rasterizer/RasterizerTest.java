@@ -95,13 +95,13 @@ public class RasterizerTest {
 
         assertNotNull(result);
     }
-    
-    @Test
-    public void testTiffGeneration() throws IOException, URISyntaxException {
-        byte[] result = RasterizationFactory.getInstance("tif").rasterize(image, readFile("/data/test.tif"), "tif");
-
-        assertNotNull(result);
-    }
+//    
+//    @Test
+//    public void testTiffGeneration() throws IOException, URISyntaxException {
+//        byte[] result = RasterizationFactory.getInstance("tif").rasterize(image, readFile("/data/test.tif"), "tif");
+//
+//        assertNotNull(result);
+//    }
 
     @Test
     public void testJpgGeneration() throws IOException, URISyntaxException {

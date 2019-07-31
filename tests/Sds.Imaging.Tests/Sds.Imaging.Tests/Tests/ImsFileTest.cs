@@ -39,7 +39,8 @@ namespace Sds.Imaging.Tests
         }
 
         [Fact]
-        public async Task NikonImageGenetating_ValidNikonFile_ShouldGenerateOneImage()
+        public async Task ImsImageGenetating_ValidNikonFile_ShouldGenerateOneImage()
+
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             var blobInfo = await Harness.BlobStorage.GetFileInfo(evn.BlobId, Bucket);
@@ -48,7 +49,7 @@ namespace Sds.Imaging.Tests
         }
 
         [Fact]
-        public void NikonImageGenetating_ValidNikonFile_ReceivedEventShouldContainValidData()
+        public void ImsImageGenetating_ValidNikonFile_ReceivedEventShouldContainValidData()
         {
             var evn = Harness.GetImageGeneratedEvent(Id);
             evn.Should().NotBeNull();

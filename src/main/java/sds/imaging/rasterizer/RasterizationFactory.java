@@ -16,8 +16,6 @@ public class RasterizationFactory {
             case "png":
             case "bmp":
             case "gif":
-            case "tif":
-            case "tiff":
             case "svg":
             case "ico":
                 return new ImageRasterizer();
@@ -45,9 +43,13 @@ public class RasterizationFactory {
             case "lif":
             case "ims":
                 return new ZeissBioformatRasterizer();
-            //case "lsm":
+            case "lsm":
+                return new LsmRasterizer();
             case "nd2":
                 return new NikonRasterizer();
+            case "tif":
+            case "tiff":
+                return new TiffRasterizer();
             default:
                 throw new AssertionError(String.format("Unsupported file format: %s", extension));
         }

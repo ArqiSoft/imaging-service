@@ -49,3 +49,4 @@ launchSettings.json
 **/.gitignore
 **/Sds.Osdr.WebApi.JMeter
 **/Sds.Osdr.Domain.BddTests
+target

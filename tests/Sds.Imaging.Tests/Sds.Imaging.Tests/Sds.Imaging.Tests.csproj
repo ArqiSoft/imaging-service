@@ -74,7 +74,13 @@
     <None Update="Resources\HFT7_day0_field02_Z.lsm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\HFT9_day0_100x_f1.lsm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\HFT9_day0_100x_f3_Z.lsm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\img05_488_000.tif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\key journal set xls.xls">
