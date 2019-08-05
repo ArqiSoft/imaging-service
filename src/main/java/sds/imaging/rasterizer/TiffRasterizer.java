@@ -13,10 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.imageio.stream.ImageInputStream;
-import loci.common.services.DependencyException;
-import loci.common.services.ServiceException;
-import loci.formats.FormatException;
-import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import sds.imaging.domain.core.Image;
 

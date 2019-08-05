@@ -78,7 +78,7 @@ public class NikonRasterizer implements Rasterizer {
 
             cleanup();
                 
-            resultImageBytes = Files.readAllBytes(outputTempFile.toPath());
+            resultImageBytes = new TiffRasterizer().rasterize(image, Files.readAllBytes(outputTempFile.toPath()), "tiff");
             inputTempFile.delete();
             outputTempFile.delete();
             
