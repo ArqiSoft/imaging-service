@@ -1,3 +1,54 @@
+# Created by .ignore support plugin (hsz.mobi)
+### JetBrains template
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
+*.iml
+
+## Directory-based project format:
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+
+#=== Eclipse ===
+target/
+**/target/**
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+local.properties
+.classpath
+.settings/
+.loadpath
+.spring*
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.svn
+/sds.messaging/nbproject/private/
+
 # User-specific files
 *.suo
 *.user
