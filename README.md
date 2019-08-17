@@ -12,6 +12,8 @@ Supported formats:
 
 * cif - output format: png
 
+* czi, lif, ims, lsm, nd2 - output format: png
+
 ## System Requirements
 
 Java 1.8, Maven 3.x
