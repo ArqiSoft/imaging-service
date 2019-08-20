@@ -246,12 +246,7 @@
         <repository>
             <id>imagej.public</id>
             <name>ImageJ Maven repositrory</name>
-            <url>http://maven.imagej.net/content/repositories/releases/</url>
-        </repository>
-        <repository>
-            <id>loci</id>
-            <name>Loci Maven Repository</name>
-            <url>http://dev.loci.wisc.edu/maven2/releases/</url>
+            <url>https://maven.imagej.net/content/groups/public</url>
         </repository>
     </repositories>
 

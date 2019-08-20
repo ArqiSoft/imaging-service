@@ -28,7 +28,7 @@ namespace Sds.Imaging.Tests
 
         private List<ExceptionInfo> Faults = new List<ExceptionInfo>();
 
-        public ReceivedMessageList Received { get; } = new ReceivedMessageList(TimeSpan.FromSeconds(10));
+        public ReceivedMessageList Received { get; } = new ReceivedMessageList(TimeSpan.FromSeconds(20));
 
         public ImagingTestHarness()
         {
@@ -46,10 +46,10 @@ namespace Sds.Imaging.Tests
 
             services.AddTransient<IBlobStorage, GridFsStorage>(x =>
             {
-                var blobStorageUrl = new MongoUrl(Environment.ExpandEnvironmentVariables(configuration["GridFs:ConnectionString"]));
-                var client = new MongoClient(blobStorageUrl);
+                var gridFsConnectionUrl = new MongoUrl(Environment.ExpandEnvironmentVariables(configuration["GridFs:ConnectionString"]));
+                var client = new MongoClient(gridFsConnectionUrl);
 
-                return new GridFsStorage(client.GetDatabase(blobStorageUrl.DatabaseName));
+                return new GridFsStorage(client.GetDatabase(gridFsConnectionUrl.DatabaseName));
             });
 
             services.AddSingleton<IConsumerScopeProvider, DependencyInjectionConsumerScopeProvider>();
