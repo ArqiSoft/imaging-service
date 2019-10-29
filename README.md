@@ -1,10 +1,12 @@
 # Imaging service
 
+[![Build Status](https://travis-ci.org/ArqiSoft/imaging-service.svg?branch=master)](https://travis-ci.org/ArqiSoft/imaging-service)
+
 Service generates thumbnails for various file formats:
 
-Supported formats:
+## Supported formats
 
-* jpg, jpeg, png, bmp, gif, tif, tiff, svg, ico - ouptut formats: jpeg, png, bmp, gif, tif, ico 
+* jpg, jpeg, png, bmp, gif, tif, tiff, svg, ico - ouptut formats: jpeg, png, bmp, gif, tif, ico
 
 * pdf, doc, docx, xls, xlsx, ppt, pptx, ods, odt - output formats: jpg, jpeg, png, bmp, gif
 
@@ -21,7 +23,7 @@ Optional: docker, docker-compose
 
 ## Local Build Setup
 
-```bash
+```terminal
 # build
 mvn clean package
 
