@@ -1,6 +1,6 @@
 # Imaging service
 
-[![Build Status](https://travis-ci.org/ArqiSoft/imaging-service.svg?branch=master)](https://travis-ci.org/ArqiSoft/imaging-service)
+[![Build Status](https://travis-ci.com/ArqiSoft/imaging-service.svg?branch=master)](https://travis-ci.com/ArqiSoft/imaging-service)
 
 Service generates thumbnails for various file formats:
 
